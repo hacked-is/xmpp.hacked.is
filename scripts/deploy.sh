@@ -97,16 +97,16 @@ echo "Pulling configs and modules"
 echo "================================"
 
 # Prosody configs & scripts
-git clone https://github.com/crypto-world/xmpp.is "${GIT_DIR}"/xmpp.is
+git clone https://github.com/hacked-is/xmpp.hacked.is "${GIT_DIR}"/hacked.is
 
 # Official Prosody modules
 hg clone https://hg.prosody.im/prosody-modules/ "${PROSODY_DATA_DIR}"/modules
 
 # Email password reset module
-git clone https://github.com/crypto-world/mod_email_pass_reset_english "${GIT_DIR}"/mod_email_pass_reset_english
+git clone https://github.com/hacked-is/mod_email_pass_reset_english "${GIT_DIR}"/mod_email_pass_reset_english
 
 # Prosody web registration theme
-git clone https://github.com/crypto-world/prosody_web_registration_theme "${GIT_DIR}"/prosody_web_registration_theme
+git clone https://github.com/hacked-is/prosody_web_registration_theme "${GIT_DIR}"/prosody_web_registration_theme
 
 echo "================================"
 
@@ -114,8 +114,8 @@ read -p "Would you like to issue certificates with dehydrated? (Y/N) " REPLY
 if [ "${REPLY,,}" == "y" ]; then
   echo "Issuing initial SSL/TLS certificates"
   bash "${GIT_DIR}"/dehydrated/dehydrated --register --accept-terms --hook "${GIT_DIR}"/dehydrated/dehydrated.default.sh
-  bash "${GIT_DIR}"/dehydrated/dehydrated --cron --alias all --hook "${GIT_DIR}"/dehydrated/dehydrated.default.sh; bash "${GIT_DIR}"/xmpp.is/scripts/pre-le-renew-hook.sh
-  bash "${GIT_DIR}"/xmpp.is/scripts/letsencrypt-renew-hook.sh
+  bash "${GIT_DIR}"/dehydrated/dehydrated --cron --alias all --hook "${GIT_DIR}"/dehydrated/dehydrated.default.sh; bash "${GIT_DIR}"/hacked.is/scripts/pre-le-renew-hook.sh
+  bash "${GIT_DIR}"/hacked.is/scripts/letsencrypt-renew-hook.sh
 else
   echo "Continuing!"
 fi
@@ -138,10 +138,10 @@ echo "net.ipv4.tcp_congestion_control=bbr" | tee -a /etc/sysctl.conf
 echo "================================"
 
 echo "Executing final steps"
-bash "${GIT_DIR}"/xmpp.is/scripts/le-renew-hook.sh
-bash "${GIT_DIR}"/xmpp.is/scripts/cert-fingerprint.sh
-bash "${GIT_DIR}"/xmpp.is/scripts/sync.sh
-bash "${GIT_DIR}"/xmpp.is/scripts/force-owner-and-group.sh
+bash "${GIT_DIR}"/hacked.is/scripts/le-renew-hook.sh
+bash "${GIT_DIR}"/hacked.is/scripts/cert-fingerprint.sh
+bash "${GIT_DIR}"/hacked.is/scripts/sync.sh
+bash "${GIT_DIR}"/hacked.is/scripts/force-owner-and-group.sh
 
 echo "================================"
 
