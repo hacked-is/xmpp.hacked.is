@@ -8,7 +8,7 @@ ROOT_SCRIPTS_DIR="/root/scripts"
 echo
 
 # Git
-cd "${GIT_DIR}"/xmpp.is && git pull
+cd "${GIT_DIR}"/hacked.is && git pull
 cd "${GIT_DIR}"/mod_register_web && git pull
 cd "${GIT_DIR}"/prosody_web_registration_theme && git pull
 
@@ -19,7 +19,7 @@ echo
 
 echo "Pushing new configs and files"
 
-bash "${GIT_DIR}"/xmpp.is/scripts/sync.sh
+bash "${GIT_DIR}"/hacked.is/scripts/sync.sh
 
 echo
 
@@ -29,7 +29,7 @@ bash "${ROOT_SCRIPTS_DIR}"/prosody-secrets.sh
 
 echo "Forcing permissions"
 
-bash "${GIT_DIR}"/xmpp.is/scripts/force-owner-and-group.sh
+bash "${GIT_DIR}"/hacked.is/scripts/force-owner-and-group.sh
 
 echo
 
