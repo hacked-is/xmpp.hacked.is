@@ -10,9 +10,9 @@ if grep "1" "${DEHYDRATED_RENEW_FLAG}"
 
   then
 
-    bash "${GIT_DIR}"/xmpp.is/scripts/letsencrypt-to-hiawatha.sh
-    bash "${GIT_DIR}"/xmpp.is/scripts/letsencrypt-to-prosody.sh
-    bash "${GIT_DIR}"/xmpp.is/scripts/cert-fingerprint.sh
+    bash "${GIT_DIR}"/hacked.is/scripts/letsencrypt-to-hiawatha.sh
+    bash "${GIT_DIR}"/hacked.is/scripts/letsencrypt-to-prosody.sh
+    bash "${GIT_DIR}"/hacked.is/scripts/cert-fingerprint.sh
 
     echo "Script run complete! Set flag back to 0."
     echo "0" > "${DEHYDRATED_RENEW_FLAG}"
