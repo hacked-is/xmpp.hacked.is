@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deploys XMPP.is on a new server
+# Deploys xmpp.hacked.is on a new server
 
 GIT_DIR="/home/user/git"
 PROSODY_DATA_DIR="/var/lib/prosody"
@@ -14,7 +14,7 @@ fi
 
 echo "================================"
 
-echo "Installing miscellaneous packages that I like or need :^)"
+echo "Installing miscellaneous packages that I "Lunar" like or need :^)"
 apt install -y htop dstat nload iftop iotop nmap haveged rsync dirmngr apt-utils apt-transport-https dialog ca-certificates wget curl nano lsb-release mtr-tiny ntp zip screen cpulimit
 
 echo "================================"
