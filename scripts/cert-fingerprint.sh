@@ -5,7 +5,7 @@ LE_DIR="/home/user/git/dehydrated/certs/all"
 PROSODY_DIR="/etc/prosody/certs"
 HS1="y2qmqomqpszzryei.onion"
 TEMP_OUTPUT_FILE="/tmp/fingerprints.txt"
-OUTPUT_FILE="/var/www/transparency.xmpp.is/fingerprints.txt"
+OUTPUT_FILE="/var/www/transparency.hacked.is/fingerprints.txt"
 
 # Empty old file
 echo -n "" > "${TEMP_OUTPUT_FILE}"
