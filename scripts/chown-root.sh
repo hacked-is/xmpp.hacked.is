@@ -3,4 +3,4 @@
 
 GIT_DIR="/home/user/git"
 
-chown -R root:root "${GIT_DIR}"/xmpp.is
+chown -R root:root "${GIT_DIR}"/hacked.is
