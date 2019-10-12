@@ -93,20 +93,20 @@ authentication = "internal_hashed"
 
 	-- mod_welcome --
 
-	welcome_message = "Welcome to $host, make sure you browse around the site for more details about us! https://xmpp.is/"
+	welcome_message = "Welcome to $host, make sure you browse around the site for more details about us! https://hacked.is/"
 
 	-- mod_watchregistrations --
 
-	registration_watchers = { "admin@xmpp.is" } -- mod_watchregistrations will use this list of users instead of the admin list
+	registration_watchers = { "admin@hacked.is" } -- mod_watchregistrations will use this list of users instead of the admin list
 	registration_notification = "User $username just registered on $host"
 
 	-- mod_server_contact_info --
 
 	contact_info = {
-	abuse = { "https://xmpp.is/contact/" };
-	admin = { "https://xmpp.is/contact/" };
-	feedback = { "https://xmpp.is/contact/" };
-	support = { "https://xmpp.is/contact/" };
+	abuse = { "https://xmpp.hacked.is/contact/" };
+	admin = { "https://xmpp.hacked.is/contact/" };
+	feedback = { "https://xmpp.hacked.is/contact/" };
+	support = { "https://xmpp.hacked.is/contact/" };
 	};
 
 	-- Log Config --
@@ -182,7 +182,7 @@ smacks_max_hibernated_sessions = 10
 smacks_max_old_sessions = 10
 
 -- mod_block_registrations --
-block_registrations_users = { "administrator", "admin", "hostmaster", "postmaster", "webmaster", "root", "xmpp", "lunar" }
+block_registrations_users = { "administrator", "admin", "hostmaster", "postmaster", "webmaster", "network", "root", "xmpp", "beard", "lunar" }
 block_registrations_require = "^[a-zA-Z0-9_.-]+$" -- Allow only simple ASCII characters in usernames
 
 Include "conf.d/*.cfg.lua"
