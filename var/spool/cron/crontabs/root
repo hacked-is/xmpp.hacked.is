@@ -2,37 +2,37 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 MAILTO=alerts@lunar.systems
 
 # Delete offline messages that are too large (to prevent storage DoS)
-* * * * * bash /home/user/git/xmpp.is/scripts/cleanup-prosody-offline-messages.sh > /dev/null 2>&1
+* * * * * bash /home/user/git/hacked.is/scripts/cleanup-prosody-offline-messages.sh > /dev/null 2>&1
 
-# Update connection stats: https://transparency.xmpp.is/connection-stats.txt
-* * * * * bash /home/user/git/xmpp.is/scripts/connection-stats.sh > /dev/null 2>&1
+# Update connection stats: https://transparency.hacked.is/connection-stats.txt
+* * * * * bash /home/user/git/hacked.is/scripts/connection-stats.sh > /dev/null 2>&1
 
 # Run anti-bruteforce script
-*/5 * * * * bash /home/user/git/xmpp.is/scripts/anti-bruteforce.sh > /dev/null 2>&1
+*/5 * * * * bash /home/user/git/hacked.is/scripts/anti-bruteforce.sh > /dev/null 2>&1
 
 # Run le-renew-hook.sh to check for dehydrated flag and push new certs if possible
-*/5 * * * * bash /home/user/git/xmpp.is/scripts/le-renew-hook.sh >> /home/user/git/dehydrated/renew-cert-push.log 2>&1
+*/5 * * * * bash /home/user/git/hacked.is/scripts/le-renew-hook.sh >> /home/user/git/dehydrated/renew-cert-push.log 2>&1
 
 # Run service-actions.sh --tor-restart to check if Tor needs to be restarted
-*/5 * * * * bash /home/user/git/xmpp.is/scripts/service-actions.sh --tor-restart > /dev/null 2>&1
+*/5 * * * * bash /home/user/git/hacked.is/scripts/service-actions.sh --tor-restart > /dev/null 2>&1
 
 # Script to check if Tor HS v2/v3 is reachable by parsing the logs
-*/5 * * * * bash /home/user/git/xmpp.is/scripts/service-checks.sh --tor-check-logs > /dev/null 2>&1
+*/5 * * * * bash /home/user/git/hacked.is/scripts/service-checks.sh --tor-check-logs > /dev/null 2>&1
 
 # Run service-checks.sh --prosody-check to check if Prosody is running
-* * * * * bash /home/user/git/xmpp.is/scripts/service-checks.sh --prosody-check > /dev/null 2>&1
+* * * * * bash /home/user/git/hacked.is/scripts/service-checks.sh --prosody-check > /dev/null 2>&1
 
 # Run service-actions.sh --prosody-restart to check if Prosody needs to be started
-*/5 * * * * bash /home/user/git/xmpp.is/scripts/service-actions.sh --prosody-restart > /dev/null 2>&1
+*/5 * * * * bash /home/user/git/hacked.is/scripts/service-actions.sh --prosody-restart > /dev/null 2>&1
 
 # Force permissions
-@hourly bash /home/user/git/xmpp.is/scripts/force-owner-and-group.sh > /dev/null 2>&1
+@hourly bash /home/user/git/hacked.is/scripts/force-owner-and-group.sh > /dev/null 2>&1
 
 # Cleanup mod_http_upload files that didn't delete for some reason
 @hourly find /var/lib/prosody/http_upload/ -mindepth 1 -mtime +14 -delete > /dev/null 2>&1
 
 # Hourly GoAccess stats update
-@hourly /usr/bin/goaccess /var/log/hiawatha/xmpp.is-access.log -o /var/www/stats.xmpp.is/index.html > /dev/null 2>&1
+@hourly /usr/bin/goaccess /var/log/hiawatha/hacked.is-access.log -o /var/www/stats.hacked.is/index.html > /dev/null 2>&1
 
 # Hourly Borg Backup
 #30 * * * * bash /root/scripts/borgbackup.sh >> /var/log/borg.log 2>&1
