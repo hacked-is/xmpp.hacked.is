@@ -26,7 +26,7 @@ else
 fi
 
 # Update Prosody IP
-dig A prosody.xmpp.is +short > "${PROSODY_IP}"
+dig A prosody.hacked.is +short > "${PROSODY_IP}"
 
 # Set flag to prevent duplicate runs
 echo "0" > "${ANTI_BRUTEFORCE_FLAG}"
